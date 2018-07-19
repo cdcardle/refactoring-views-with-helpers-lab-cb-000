@@ -482,3 +482,27 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.7ms)
+
+
+Started GET "/songs/new" for 68.42.76.249 at 2018-07-19 13:14:53 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/songs" for 68.42.76.249 at 2018-07-19 13:15:00 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vPXa/a7Ouy+DEMj9aqbM4VEno+PGaN8Kh3hm1dJHjTHaIABStNE7Ur3MYewJYwxWKnf/NQxOwmn59SuwhAHvog==", "song"=>{"title"=>"Adam's Song", "artist_name"=>"Blink 182"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Blink 182"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blink 182"], ["created_at", "2018-07-19 13:15:00.830427"], ["updated_at", "2018-07-19 13:15:00.830427"]]
+  [1m[35m (65.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Adam's Song"], ["artist_id", 3], ["created_at", "2018-07-19 13:15:00.899341"], ["updated_at", "2018-07-19 13:15:00.899341"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.152.27:36882/songs/3
+Completed 302 Found in 83ms (ActiveRecord: 69.5ms)
