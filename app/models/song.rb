@@ -6,7 +6,6 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
-    self.artist.name = name
-    self.save
+    self.artist.update(name: name)
   end
 end
