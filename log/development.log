@@ -550,3 +550,22 @@ Processing by SongsController#show as HTML
   [1m[35mSong Exists (0.2ms)[0m  SELECT  1 AS one FROM "songs" WHERE "songs"."artist_id" = ? LIMIT 1  [["artist_id", 3]]
   Rendered songs/show.html.erb within layouts/application (25.8ms)
 Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs/3" for 68.42.76.249 at 2018-07-19 13:18:15 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/cdcardle/refactoring-views-with-helpers-lab-cb-000/app/helpers/artists_helper.rb:7: syntax error, unexpected '<'
+    <%= link_to artist.name, artist_path(artist) %>
+     ^
+/home/cdcardle/refactoring-views-with-helpers-lab-cb-000/app/helpers/artists_helper.rb:7: unterminated string meets end of file):
+  app/helpers/artists_helper.rb:7: syntax error, unexpected '<'
+  app/helpers/artists_helper.rb:7: unterminated string meets end of file
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/songs_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
